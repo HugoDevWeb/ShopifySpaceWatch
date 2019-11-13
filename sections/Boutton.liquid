@@ -1,0 +1,103 @@
+{% if section.settings.Text_color == "black" %}
+    {% assign a = "btn-black" %}
+    {% else if section.settings.Text_color == "white" %}
+    {% assign a = "btn-white" %}
+{% endif %}
+
+
+<div id="section-cta">
+    <div class="container text-center w-100">
+        <a href="{{ section.setting.link }}" class=" btn btnspec {{ a }}" >{{ section.settings.linktext }}</a>       
+    </div>
+</div>
+
+<style>
+    a.btnspec{
+        background-color: {{section.settings.background_color}};
+        font-size: {{section.settings.text-size}}px
+    }
+    
+    a.btnspec:hover{
+        background-color: {{section.settings.color-hover}};
+    };
+
+    a.btnspec.btn-white{
+        color: white!important;
+    }
+
+    a.btnspec.btn-black{
+        color: black!important;
+    }
+  
+    
+
+</style>
+
+{% schema %}
+    {
+        "name": "Text Box",
+        "settings": [
+    
+            {
+            "id": "link",
+            "type": "url",
+            "label": "Button link"
+            },
+            {
+                "id": "linktext",
+                "type": "text",
+                "label": "Button text",
+                "default": "Click here"
+            },
+            {
+                "type": "color",
+                "id": "background_color",
+                "label": "Background color",
+                "default": "#ffffff"
+            },
+            {
+                "type": "color",
+                "id": "color-hover",
+                "label": "Hover color"
+            },
+            {
+                "id": "text-size",
+                "type": "range",
+                "label": "Font size",
+                "min":10,
+                "max": 30,
+                "step":  1,
+                "unit": "px",
+                "default": 16
+            },
+            {
+                "type": "select",
+                "id": "Text_color",
+                "options": [
+                    { "value": "white", "label": "Texte blanc"},
+                    { "value": "black", "label": "Texte noir"}
+                ],
+                "label": "Text color"
+}
+
+            
+        ],
+
+        "presets": [
+            {
+                "name": "Call to action",
+                "category": "Call To Action" 
+            }
+        ]
+    }
+
+{% endschema %}
+
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
