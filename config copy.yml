@@ -1,0 +1,6 @@
+development:
+  password:
+  theme_id: "79248261194"
+  store: https://spacewich-corp-hl.myshopify.com
+  ignore_files:
+    - config/settings_data.json
