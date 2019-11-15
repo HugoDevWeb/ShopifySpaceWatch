@@ -1,0 +1,55 @@
+
+
+<div id="section_menu">
+    <div id="menu_container">
+        
+    </div>
+
+</div>
+
+
+<style>
+
+#section_menu{
+
+    width: 100%;
+    background-color:{{section.settings.section_menu}};
+    height: 200px;
+}
+
+</style>
+
+{% schema %}
+    {
+
+        "name": "Section IIM",
+        "settings": [
+      
+            {
+                "type": "color",
+                "id": "section_menu",
+                "label": "Background color",
+                "default": "#000000"
+            }
+            
+        ],
+        
+
+        "presets": [
+            {
+                "name": "Etape 1",
+                "category": "Cours IIM" 
+            }
+        ]
+    }
+
+{% endschema %}
+
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+

@@ -1,0 +1,82 @@
+
+
+<div id="section_menu">
+    <div id="menu_container">
+        <ul class="text-center" id="ul_list">
+            {% for link in linklists.iim-menu.links%}
+            <li><a href="{{ link.url }}">{{link.title}}</a></li>
+            {%endfor%}
+        </ul>
+    </div>
+
+</div>
+
+
+<style>
+
+#section_menu{
+
+    width: 100%;
+    background-color:{{section.settings.section_menu}};
+    height: 200px;
+}
+
+#menu_container{
+    padding-top: auto;
+}
+#ul_list{
+    font-size: {{section.settings.link-size}}px;
+    display:block;
+    align-items: center;
+    justify-content: center;
+}
+
+#ul_list li{
+    list-style: none;
+}
+</style>
+
+{% schema %}
+    {
+
+        "name": "Section IIM 2",
+        "settings": [
+      
+            {
+                "type": "color",
+                "id": "section_menu",
+                "label": "Background color",
+                "default": "#FF7272"
+            },
+            {
+                "id": "link-size",
+                "type": "range",
+                "label": "Font size",
+                "min":10,
+                "max": 30,
+                "step":  1,
+                "unit": "px",
+                "default": 16
+            }
+            
+        ],
+        
+
+        "presets": [
+            {
+                "name": "Etape 2",
+                "category": "Cours IIM" 
+            }
+        ]
+    }
+
+{% endschema %}
+
+
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
