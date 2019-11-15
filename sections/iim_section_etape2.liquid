@@ -1,9 +1,10 @@
 
 
+
 <div id="section_menu">
     <div id="menu_container">
         <ul class="text-center" id="ul_list">
-            {% for link in linklists.iim-menu.links%}
+            {% for link in linklists[section.settings.selected-menu].links%}
             <li><a href="{{ link.url }}">{{link.title}}</a></li>
             {%endfor%}
         </ul>
@@ -57,6 +58,12 @@
                 "step":  1,
                 "unit": "px",
                 "default": 16
+            },
+            {
+                "type": "link_list",
+                "label": "Select",
+                "id": "selected-menu"
+                
             }
             
         ],
