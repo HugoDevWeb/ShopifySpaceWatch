@@ -2,6 +2,9 @@
 
 
 <div id="section_menu">
+    <div>
+        <img src="{{section.settings.img_choosen | img_url: 'medium'}}" alt="">
+    </div>
     <div id="menu_container">
         <ul class="text-center" id="ul_list">
             {% for link in linklists[section.settings.selected-menu].links%}
@@ -19,7 +22,10 @@
 
     width: 100%;
     background-color:{{section.settings.section_menu}};
-    height: 200px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #menu_container{
@@ -64,6 +70,12 @@
                 "label": "Select",
                 "id": "selected-menu"
                 
+            },
+
+            {
+                "type": "image_picker",
+                "id": "img_choosen",
+                "label": "Pick an image"
             }
             
         ],
