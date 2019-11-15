@@ -1,0 +1,96 @@
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+
+
+
+<div id="section_mix" class="mt-5">
+    <div id="category1">
+            <div id="carouselExampleControls1" class="carousel" data-ride="carousel">
+                    <div class="carousel-inner">
+                            
+                    <a class="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls1" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
+                  </div>
+                </div>
+            </div>
+
+            {% for product in collections[section.settings.feature_collection].products %}
+            <img src="{{ product.images | img_url: '10x10' }}" alt="">
+                                    
+                              
+                            {% endfor %}
+
+</div>    
+    
+    <style>
+    
+    #section_mix{
+    
+        width: 100%;
+        background-color:{{section.settings.section_menu}};
+        height: 100vh;
+    }
+
+    #section_mix div {
+        border: 1px solid white;
+        height: 50%;
+        width: 100%;
+    }
+
+    #section_mix img{
+        height: 100%;
+    }
+  
+    </style>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+    {% schema %}
+        {
+    
+            "name": "Section IIM Mix&Match",
+            "settings": [
+          
+                {
+                    "type": "color",
+                    "id": "section_menu",
+                    "label": "Background color",
+                    "default": "#FF7272"
+                },
+                {
+                    "type": "collection",
+                    "id": "feature_collection",
+                    "label": "Feature collection"
+                }
+                
+            ],
+            
+    
+            "presets": [
+                {
+                    "name": "Etape 3",
+                    "category": "Cours IIM" 
+                }
+            ]
+        }
+    
+    {% endschema %}
+    
+    
+    
+    {% stylesheet %}
+    {% endstylesheet %}
+    
+    {% javascript %}
+    {% endjavascript %}
+    
+    
